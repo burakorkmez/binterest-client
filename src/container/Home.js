@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { FaCameraRetro } from 'react-icons/fa';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import { Sidebar, UserProfile } from '../components';
 import Pins from './Pins';
 import { client } from '../client';
-import { FaCameraRetro } from 'react-icons/fa';
 import { userQuery } from '../utils/data';
 
 const Home = () => {
