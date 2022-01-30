@@ -70,3 +70,52 @@ export const categories = [
 			'https://i.pinimg.com/236x/2e/63/c8/2e63c82dfd49aca8dccf9de3f57e8588.jpg',
 	},
 ];
+
+export const searchQuery = (searchTerm) => {
+	const query = `*[_type == "pin" && title match '${searchTerm}*' || category match '${searchTerm}*' || about match '${searchTerm}*']{
+		  image{
+			asset->{
+			  url
+			}
+		  },
+			  _id,
+			  destination,
+			  postedBy->{
+				_id,
+				userName,
+				image
+			  },
+			  save[]{
+				_key,
+				postedBy->{
+				  _id,
+				  userName,
+				  image
+				},
+			  },
+			}`;
+	return query;
+};
+
+export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
+	image{
+	  asset->{
+		url
+	  }
+	},
+		_id,
+		destination,
+		postedBy->{
+		  _id,
+		  userName,
+		  image
+		},
+		save[]{
+		  _key,
+		  postedBy->{
+			_id,
+			userName,
+			image
+		  },
+		},
+	  } `;
