@@ -45,7 +45,7 @@ const Home = () => {
 						onClick={() => setToggleSidebar(true)}
 					/>
 					<Link to="/">
-						<FaCameraRetro alt="logo" className=" text-2xl" />
+						<FaCameraRetro alt="logo" className="text-red-600 text-2xl" />
 					</Link>
 					<Link to={`user-profile/${user?._id}`}>
 						<img
@@ -64,7 +64,7 @@ const Home = () => {
 								onClick={() => setToggleSidebar(false)}
 							/>
 						</div>
-						<Sidebar closeToggle={setToggleSidebar} user={user && user} />
+						<Sidebar setToggleSidebar={setToggleSidebar} user={user && user} />
 					</div>
 				)}
 			</div>

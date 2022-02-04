@@ -11,9 +11,9 @@ const isNotActiveStyle =
 const isActiveStyle =
 	'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black  transition-all duration-200 ease-in-out capitalize';
 
-const Sidebar = ({ closeToggle, user }) => {
+const Sidebar = ({ setToggleSidebar, user }) => {
 	const handleCloseSidebar = () => {
-		if (closeToggle) closeToggle(false);
+		if (setToggleSidebar) setToggleSidebar(false);
 	};
 
 	return (
@@ -43,7 +43,7 @@ const Sidebar = ({ closeToggle, user }) => {
 					<h3 className="mt-2 px-5 text-base 2xl:text-xl">
 						Discover cateogries
 					</h3>
-					{categories.slice(0, categories.length - 1).map((category) => (
+					{categories.map((category) => (
 						<NavLink
 							to={`/category/${category.name}`}
 							className={({ isActive }) =>

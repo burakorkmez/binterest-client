@@ -34,6 +34,9 @@ const Feed = () => {
 			<Spinner message={`We are adding ${ideaName} ideas to your feed!`} />
 		);
 	}
+	if (pins?.length === 0)
+		return <p>There is not any photo in {categoryId} category</p>;
+
 	return <div>{pins && <MasonryLayout pins={pins} />}</div>;
 };
 

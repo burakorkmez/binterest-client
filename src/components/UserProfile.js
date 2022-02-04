@@ -58,6 +58,7 @@ const UserProfile = () => {
 
 		navigate('/login');
 	};
+	console.log(pins);
 
 	if (!user) return <Spinner message="Loading profile" />;
 
